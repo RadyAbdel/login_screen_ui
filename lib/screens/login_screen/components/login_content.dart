@@ -33,12 +33,12 @@ class _LoginContentState extends State<LoginContent>
           elevation: 8,
           shadowColor: Colors.black87,
           color: Colors.transparent,
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(10),
           child: TextField(
             textAlignVertical: TextAlignVertical.bottom,
             decoration: InputDecoration(
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide.none,
               ),
               filled: true,
@@ -75,51 +75,6 @@ class _LoginContentState extends State<LoginContent>
     );
   }
 
-  Widget orDivider() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 130, vertical: 8),
-      child: Row(
-        children: [
-          Flexible(
-            child: Container(
-              height: 1,
-              color: kPrimaryColor,
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Text(
-              'or',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          Flexible(
-            child: Container(
-              height: 1,
-              color: kPrimaryColor,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget logos() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset('assets/images/facebook.png'),
-          const SizedBox(width: 24),
-          Image.asset('assets/images/google.png'),
-        ],
-      ),
-    );
-  }
 
   Widget forgotPassword() {
     return Padding(
@@ -127,7 +82,7 @@ class _LoginContentState extends State<LoginContent>
       child: TextButton(
         onPressed: () {},
         child: const Text(
-          'Forgot Password?',
+          'Mot de passe oublié ?',
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
@@ -141,18 +96,16 @@ class _LoginContentState extends State<LoginContent>
   @override
   void initState() {
     createAccountContent = [
-      inputField('Name', Ionicons.person_outline),
-      inputField('Email', Ionicons.mail_outline),
-      inputField('Password', Ionicons.lock_closed_outline),
-      loginButton('Sign Up'),
-      orDivider(),
-      logos(),
+      inputField('NOM Prenom', Ionicons.person),
+      inputField('Adresse mail', Ionicons.mail_unread),
+      inputField('Mot de passe', Ionicons.lock_closed),
+      loginButton('Créer')
     ];
 
     loginContent = [
-      inputField('Email', Ionicons.mail_outline),
-      inputField('Password', Ionicons.lock_closed_outline),
-      loginButton('Log In'),
+      inputField('Adresse mail', Ionicons.mail_unread),
+      inputField('Mot de passe', Ionicons.lock_closed),
+      loginButton('Connexion'),
       forgotPassword(),
     ];
 
