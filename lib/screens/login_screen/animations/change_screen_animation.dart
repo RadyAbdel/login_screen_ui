@@ -38,7 +38,7 @@ class ChangeScreenAnimation {
   }) {
     topTextController = AnimationController(
       vsync: vsync,
-      duration: const Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 50),
     );
 
     topTextAnimation = _createAnimation(
@@ -49,7 +49,7 @@ class ChangeScreenAnimation {
 
     bottomTextController = AnimationController(
       vsync: vsync,
-      duration: const Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 50),
     );
 
     bottomTextAnimation = _createAnimation(
@@ -62,7 +62,7 @@ class ChangeScreenAnimation {
       createAccountControllers.add(
         AnimationController(
           vsync: vsync,
-          duration: const Duration(milliseconds: 200),
+          duration: const Duration(milliseconds: 50),
         ),
       );
 
@@ -79,7 +79,7 @@ class ChangeScreenAnimation {
       loginControllers.add(
         AnimationController(
           vsync: vsync,
-          duration: const Duration(milliseconds: 200),
+          duration: const Duration(milliseconds: 50),
         ),
       );
 
@@ -115,7 +115,7 @@ class ChangeScreenAnimation {
       ...loginControllers,
     ]) {
       controller.forward();
-      await Future.delayed(const Duration(milliseconds: 100));
+      await Future.delayed(const Duration(milliseconds: 50));
     }
 
     bottomTextController.reverse();
@@ -135,7 +135,7 @@ class ChangeScreenAnimation {
       ...createAccountControllers.reversed,
     ]) {
       controller.reverse();
-      await Future.delayed(const Duration(milliseconds: 100));
+      await Future.delayed(const Duration(milliseconds: 50));
     }
 
     bottomTextController.reverse();
